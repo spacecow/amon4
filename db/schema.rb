@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150615063807) do
   enable_extension "plpgsql"
 
   create_table "pages", force: :cascade do |t|
-    t.string "menu"
+    t.string "menu", null: false
   end
 
 end
