@@ -8,6 +8,14 @@
     <% end %>
   </div>
 
+  <div id="page_title_container">
+    <%= f.label :title, 'Titel' %>
+    <%= f.text_field :title %>
+    <% unless @page.errors.get(:title).empty? %>
+      <div class="errors"><%= @page.errors.get(:title).join %></div>
+    <% end %>
+  </div>
+
   <%= f.submit 'Skapa' %>
 
 <% end %>

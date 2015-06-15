@@ -4,7 +4,7 @@ require './app/models/page'
 describe Page do
 
   let(:menu){ 'Top' }
-  let(:model){ Page.create menu:menu }
+  let(:model){ Page.create menu:menu, title:'Vaelkommen' }
   let(:factory){ create :page }
 
   it{ expect{model}.to change(Page,:count).from(0).to(1) }
