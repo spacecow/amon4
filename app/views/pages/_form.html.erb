@@ -19,6 +19,14 @@
   <%= f.label :subtitle, 'Undertitel' %>
   <%= f.text_field :subtitle %>
 
+  <div id="page_pos_container">
+    <%= f.label :pos, 'Position' %>
+    <%= f.text_field :pos %>
+    <% unless page.errors.get(:pos).empty? %>
+      <div class="errors"><%= page.errors.get(:pos).join %></div>
+    <% end %>
+  </div>
+
   <%= f.submit 'Skapa' %>
 
 <% end %>

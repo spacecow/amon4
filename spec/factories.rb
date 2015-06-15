@@ -5,6 +5,7 @@ FactoryGirl.define do
   factory :page do
     menu 'factory menu'
     title 'factory title'
+    pos 1
   end
 
 end
