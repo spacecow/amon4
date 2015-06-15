@@ -1,7 +1,12 @@
 <%= form_for @page do |f| %>
 
-  <%= f.label :menu, 'Meny' %>
-  <%= f.text_field :menu %>
+  <div id="page_menu_container">
+    <%= f.label :menu, 'Meny' %>
+    <%= f.text_field :menu %>
+    <% unless @page.errors.get(:menu).empty? %>
+      <div class="errors"><%= @page.errors.get(:menu).join %></div>
+    <% end %>
+  </div>
 
   <%= f.submit 'Skapa' %>
 

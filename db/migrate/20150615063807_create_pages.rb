@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.string :menu
     end
+    execute "ALTER TABLE pages ADD CONSTRAINT menu_cannot_be_blank CHECK (char_length(menu) <> 0)"
   end
 
   def down

@@ -20,6 +20,15 @@ describe 'Create page' do
     click_on 'Skapa'
     page = Page.last
     expect(page.menu).to eq 'Top'
+    expect(current_path).to eq page_path(page) 
+  end
+
+  it "with failures" do
+    visit new_page_path
+    fill_in 'Meny', with:''
+    click_on 'Skapa'
+    expect(find('#page_menu_container .errors').text).to eq "can't be blank"
+    expect(current_path).to eq pages_path 
   end
 
 end

@@ -9,8 +9,11 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new pages_params
-    @page.save
-    redirect_to @page
+    if @page.save
+      redirect_to @page
+    else
+      render :new
+    end
   end
 
   private
