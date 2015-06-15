@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   private
 
     def pages_params
-      params.require(:page).permit(:menu,:title,:subtitle,:pos)
+      params.require(:page).permit(:menu,:title,:subtitle,:pos,:content)
     end
 
 end

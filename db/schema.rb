@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150615063807) do
     t.string  "title",    null: false
     t.string  "subtitle"
     t.integer "pos",      null: false
+    t.text    "content"
   end
 
 end
