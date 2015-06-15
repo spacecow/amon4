@@ -18,10 +18,12 @@ describe 'Create page' do
     visit new_page_path
     fill_in 'Meny', with:'Top'
     fill_in 'Titel', with:'Vaelkommen'
+    fill_in 'Undertitel', with:'ihjaelkommen'
     click_on 'Skapa'
     page = Page.last
     expect(page.menu).to eq 'Top'
     expect(page.title).to eq 'Vaelkommen'
+    expect(page.subtitle).to eq 'ihjaelkommen'
     expect(current_path).to eq page_path(page) 
   end
 
