@@ -8,6 +8,9 @@ FactoryGirl.define do
     pos 1
   end
 
+  factory :user do
+  end
+
 end
 
 end
