@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: amon4_development
+
+test:
+  <<: *default
+  database: amon4_test
+
+production:
+  <<: *default
+  database: amon4_production
+  username: amon4
+  password: <%= ENV['YOYAKU_DATABASE_PASSWORD'] %>
