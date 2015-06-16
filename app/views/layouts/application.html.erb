@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Amon Revision</title>
+  <title>Amon Revision AB</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,7 +12,7 @@
 
   <div id="header">
     <div id='logo'>
-      <%= link_to image_tag 'amonrevision.jpg', width:"300", border:"0", alt:"Amon Revision" %>
+      <%= link_to image_tag 'amonrevision.jpg', width:"300", border:"0", alt:"Amon Revision AB" %>
     </div>
     <ul id='navigation'>
       <% Page.order(:pos).each do |page| %>
@@ -31,7 +31,17 @@
     <% end %>
 
     <%= yield %>
+
+    <div id='contents_footer'>
+      <%= image_tag 'far.png', width:"55", alt:"Far" %>
+    </div>
+    <div class="clear"></div>
   </div>
+
+  <div id="footer">
+    &copy <%= Time.now.year %> Amon Revision AB. All Rights Reserved.
+  </div>
+
 </div>
 
 </body>

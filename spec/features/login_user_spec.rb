@@ -6,6 +6,7 @@ describe 'Login user' do
   let(:user){ create :user, username:'kelsier', password:'vin' }
 
   before do
+    create :page
     user
     visit login_path
     fill_in 'Login', with:'kelsier'

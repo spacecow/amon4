@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 
   def show
-    @page = Page.find params[:id]
+    id = params[:id] || Page.first.id
+    @page = Page.find id
   end
 
   def new

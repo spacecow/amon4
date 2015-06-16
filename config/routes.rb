@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => "pages#show", :id => 1
+  root :to => "pages#show"
 
   resources :pages, only:[:show,:new,:create,:edit,:update]
 
