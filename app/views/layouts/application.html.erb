@@ -11,6 +11,9 @@
 <div id="root">
 
   <div id="header">
+    <div id='logo'>
+      <%= link_to image_tag 'amonrevision.jpg', width:"300", border:"0", alt:"Amon Revision" %>
+    </div>
     <ul id='navigation'>
       <% Page.order(:pos).each do |page| %>
         <li><%= link_to page.menu, page %></li>
