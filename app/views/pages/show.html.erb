@@ -4,7 +4,7 @@
 </div>
 
 <div id="left_content">
-  <%= @page.content %>
+  <%= raw textilize(@page.content) %>
 </div>
 <div id="right_content">
   <%= image_tag 'cherry.jpg', width:"300", alt:"Cherry Blossom" %>
