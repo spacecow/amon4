@@ -8,15 +8,28 @@
 </head>
 <body>
 
-<% unless flash.keys.empty? %>
-  <% flash.each do |key,val| %>
-    <div class="flash <%= key %>">
-      <%= val %>
-    </div>
-  <% end %>
-<% end %>
+<div id="root">
 
-<%= yield %>
+  <div id="header">
+    <ul id='navigation'>
+      <% Page.order(:pos).each do |page| %>
+        <li><%= link_to page.menu, page %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div id="contents">
+    <% unless flash.keys.empty? %>
+      <% flash.each do |key,val| %>
+        <div class="flash <%= key %>">
+          <%= val %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

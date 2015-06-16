@@ -10,12 +10,11 @@ describe 'Create page' do
     fill_in 'Position', with:'1'
     fill_in 'Innehåll', with:'*En massa rolig text*'
     click_on 'Skapa'
-    #expect(page).to have_content 'Top'
+    expect(page).to have_content 'Top'
     expect(page).to have_content 'Vaelkommen'
     expect(page).to have_content 'ihjaelkommen'
     expect(page).to have_content 'En massa rolig text'
     page = Page.last
-    expect(page.menu).to eq 'Top'
     expect(page.pos).to be 1 
     expect(current_path).to eq page_path(page) 
   end
