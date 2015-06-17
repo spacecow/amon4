@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Create page' do
 
   it "successfully" do
+    login
     visit new_page_path
     fill_in 'Meny', with:'Top'
     fill_in 'Titel', with:'Vaelkommen'
@@ -20,6 +21,7 @@ describe 'Create page' do
   end
 
   it "with failures" do
+    login
     visit new_page_path
     fill_in 'Meny', with:''
     fill_in 'Titel', with:''

@@ -52,3 +52,11 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 end
+
+def login
+  create :user, username:'kelsier', password:'vin'
+  visit login_path
+  fill_in 'Login', with:'kelsier'
+  fill_in 'Password', with:'vin'
+  click_on 'Login'
+end

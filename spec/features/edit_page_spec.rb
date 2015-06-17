@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Create page' do
 
   it "successfully" do
+    login
     page = create :page 
     visit edit_page_path(page)
     fill_in 'Meny', with:'Top'
@@ -21,6 +22,7 @@ describe 'Create page' do
   end
 
   it "with failures" do
+    login
     page = create :page 
     visit edit_page_path(page)
     fill_in 'Meny', with:''

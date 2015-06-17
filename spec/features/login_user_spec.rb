@@ -17,7 +17,7 @@ describe 'Login user' do
   describe 'success' do
     it 'displays a login message' do
       expect(page.find('.flash.notice')).to have_content 'Successfully logged in'
-      expect(current_path).to eq root_path
+      expect(current_path).to eq pages_path
       expect(page).to have_content 'Editera'
     end
   end
